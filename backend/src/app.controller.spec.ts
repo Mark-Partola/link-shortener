@@ -18,7 +18,7 @@ describe('AppController', () => {
 
   describe('root', () => {
     it('should return "Hello World!"', () => {
-      expect(linkShortenerController.postValue({ value: '1' })).toBe(
+      expect(linkShortenerController.shorten({ link: '1' })).toBe(
         'Hello World!',
       );
     });
