@@ -1,21 +1,6 @@
-import {
-  BadRequestException,
-  Body,
-  Controller,
-  Get,
-  NotFoundException,
-  Param,
-  Post,
-  Res,
-} from '@nestjs/common';
+import { BadRequestException, Body, Controller, Post } from '@nestjs/common';
 import { ApiProperty, ApiTags } from '@nestjs/swagger';
-import { Response } from 'express';
 import { LinkShortenerService } from './link-shortener.service';
-
-class GetLinkRequestParams {
-  @ApiProperty()
-  hash: string;
-}
 
 class PostValueRequestDTO {
   @ApiProperty()
@@ -26,23 +11,12 @@ interface PostValueResponseDTO {
   link: string;
 }
 
-@Controller()
+@Controller('api/v1')
 @ApiTags('Links')
 export class LinkShortenerController {
   constructor(private readonly linkShortenerService: LinkShortenerService) {}
 
-  @Get(':hash')
-  getLink(@Param() params: GetLinkRequestParams, @Res() response: Response) {
-    const link = this.linkShortenerService.getOriginalLink(params.hash);
-
-    if (!link) {
-      throw new NotFoundException();
-    }
-
-    response.redirect(link);
-  }
-
-  @Post('api/v1/shorten')
+  @Post('shorten')
   shorten(@Body() body: PostValueRequestDTO): PostValueResponseDTO {
     const isValid = this.linkShortenerService.isValidUrl(body.link);
 
