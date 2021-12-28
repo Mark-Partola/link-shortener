@@ -1,4 +1,6 @@
-const BACKEND_URL = "http://localhost:3000";
+import { config } from "../config";
+
+const BACKEND_URL = config.BACKEND_URL;
 
 export const api = {
   async shorten(link: string): Promise<{ hash: string }> {

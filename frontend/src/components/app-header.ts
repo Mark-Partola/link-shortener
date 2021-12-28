@@ -5,6 +5,7 @@ import "./app-logo";
 import "./app-input";
 import "./app-button";
 import { api } from "../api/api";
+import { config } from "../config";
 
 @customElement("app-header")
 export class AppHeader extends LitElement {
@@ -76,7 +77,9 @@ export class AppHeader extends LitElement {
             </div>`
           : null}
         ${this.hash
-          ? html`<div class="app-header-result">${this.hash}</div>`
+          ? html`<div class="app-header-result">
+              <a href="${this.hash}">${this.hash}</a>
+            </div>`
           : null}
       </div>
     `;
@@ -94,7 +97,7 @@ export class AppHeader extends LitElement {
     try {
       const response = await api.shorten(this.value);
 
-      this.hash = response.hash;
+      this.hash = `${config.BACKEND_URL}/${response.hash}`;
     } catch {
       this.error = true;
     }
