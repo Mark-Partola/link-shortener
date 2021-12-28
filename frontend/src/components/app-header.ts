@@ -1,11 +1,11 @@
 import { html, css, LitElement } from "lit";
 import { customElement, property } from "lit/decorators.js";
+import { api } from "../api/api";
+import { config } from "../config";
 
 import "./app-logo";
 import "./app-input";
 import "./app-button";
-import { api } from "../api/api";
-import { config } from "../config";
 
 @customElement("app-header")
 export class AppHeader extends LitElement {

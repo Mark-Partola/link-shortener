@@ -7,7 +7,7 @@ export default defineConfig({
   },
   build: {
     lib: {
-      entry: "src/components/app-entry.ts",
+      entry: "./index.ts",
       formats: ["es"],
     },
     rollupOptions: {
