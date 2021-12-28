@@ -4,12 +4,30 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/src/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + Lit App</title>
-    <script type="module" src="/src/my-element.ts"></script>
+    <title>Link Shortener</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="index.css" />
   </head>
   <body>
-    <my-element>
-      <p>This is child content</p>
-    </my-element>
+    <app-entry>
+      <app-header>
+        <p class="page-header-slogan">
+          Professional services for your professional sites
+        </p>
+        <h1 class="page-header-title">
+          Keep it brief. <br />
+          An <span class="page-header-title-emphasize">easier</span> way to
+          <strong class="page-header-title-emphasize">share links</strong>
+        </h1>
+      </app-header>
+    </app-entry>
   </body>
+
+  <script type="module" src="/src/components/app-header.ts"></script>
 </html>

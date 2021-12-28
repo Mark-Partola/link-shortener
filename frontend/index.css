@@ -1,0 +1,31 @@
+body {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+.page-header-slogan {
+  font-size: 10px;
+  margin-bottom: 20px;
+  margin-top: 0;
+  font-weight: 500;
+  color: #aaa;
+  text-transform: uppercase;
+}
+
+.page-header-title {
+  margin-top: 0;
+  font-size: 40px;
+  font-weight: 400;
+  color: #222;
+}
+
+.page-header-title-emphasize {
+  font-weight: 700;
+  color: #000;
+}

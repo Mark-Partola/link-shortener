@@ -8,7 +8,7 @@ class PostValueRequestDTO {
 }
 
 interface PostValueResponseDTO {
-  link: string;
+  hash: string;
 }
 
 @Controller('api/v1')
@@ -25,7 +25,7 @@ export class LinkShortenerController {
     }
 
     return {
-      link: this.linkShortenerService.shorten(body.link),
+      hash: this.linkShortenerService.shorten(body.link),
     };
   }
 }
